@@ -6,7 +6,8 @@
 #endif
 using System;
 using System.Collections.Generic;
-using Coffee.UIParticleInternal;
+using Coffee.UIParticleExtensions;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Profiling;
 using UnityEngine.Rendering;
@@ -207,7 +208,11 @@ namespace Coffee.UIExtensions
                 modifiedMaterial ? (uint)modifiedMaterial.GetInstanceID() : 0,
                 texture ? (uint)texture.GetInstanceID() : 0,
                 0 < _parent.m_AnimatableProperties.Length ? (uint)GetInstanceID() : 0,
+#if UNITY_EDITOR
+                EditorJsonUtility.ToJson(modifiedMaterial).GetHashCode()
+#else
                 0
+#endif
             );
             if (!MaterialRepository.Valid(hash, _modifiedMaterial))
             {
