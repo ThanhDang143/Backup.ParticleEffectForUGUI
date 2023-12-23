@@ -20,6 +20,7 @@ namespace Coffee.UIExtensions
     [AddComponentMenu("")]
     internal class UIParticleRenderer : MaskableGraphic
     {
+        private static readonly List<Component> s_Components = new List<Component>();
         private static readonly CombineInstance[] s_CombineInstances = { new CombineInstance() };
         private static readonly List<Material> s_Materials = new List<Material>(2);
         private static MaterialPropertyBlock s_Mpb;
