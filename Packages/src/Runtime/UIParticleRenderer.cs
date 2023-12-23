@@ -470,7 +470,6 @@ namespace Coffee.UIExtensions
             else
             {
                 workerMesh.Clear();
-                canvasRenderer.SetMesh(workerMesh);
             }
 
             Profiler.EndSample();
