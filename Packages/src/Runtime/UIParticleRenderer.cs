@@ -160,7 +160,7 @@ namespace Coffee.UIExtensions
             // Create renderer object.
             var go = new GameObject("[generated] UIParticleRenderer", typeof(UIParticleRenderer))
             {
-                hideFlags = HideFlags.DontSave,
+                hideFlags = HideFlags.DontSave | HideFlags.NotEditable,
                 layer = parent.gameObject.layer
             };
 
