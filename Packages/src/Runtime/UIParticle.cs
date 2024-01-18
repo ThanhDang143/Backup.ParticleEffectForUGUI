@@ -95,7 +95,7 @@ namespace Coffee.UIExtensions
         [SerializeField]
         [Tooltip("Prevent the root-Canvas scale from affecting the hierarchy-scaled ParticleSystem.")]
         [Obsolete]
-        internal bool m_AutoScaling = false;
+        internal bool m_AutoScaling;
 
         [SerializeField]
         [Tooltip("Transform: Transform.lossyScale (=world scale) will be set to (1, 1, 1)." +
@@ -662,7 +662,8 @@ namespace Coffee.UIExtensions
                 // Create ortho-camera.
                 if (!_orthoCamera)
                 {
-                    var go = new GameObject("[generated] UIParticleOverlayCamera") { hideFlags = HideFlags.DontSave | HideFlags.NotEditable };
+                    var go = new GameObject("[generated] UIParticleOverlayCamera")
+                        { hideFlags = HideFlags.DontSave | HideFlags.NotEditable };
                     go.SetActive(false);
                     go.transform.SetParent(transform, false);
                     _orthoCamera = go.AddComponent<Camera>();

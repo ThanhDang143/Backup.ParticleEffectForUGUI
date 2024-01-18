@@ -6,7 +6,7 @@
 #endif
 using System;
 using System.Collections.Generic;
-using Coffee.UIParticleExtensions;
+using Coffee.UIParticleInternal;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Profiling;
@@ -36,11 +36,11 @@ namespace Coffee.UIExtensions
         private Material _modifiedMaterial;
         private UIParticle _parent;
         private ParticleSystem _particleSystem;
+        private float _prevCanvasScale;
         private int _prevParticleCount;
         private Vector3 _prevPsPos;
         private Vector3 _prevScale;
         private Vector2Int _prevScreenSize;
-        private float _prevCanvasScale;
         private bool _prewarm;
         private ParticleSystemRenderer _renderer;
 
@@ -209,7 +209,7 @@ namespace Coffee.UIExtensions
                 texture ? (uint)texture.GetInstanceID() : 0,
                 0 < _parent.m_AnimatableProperties.Length ? (uint)GetInstanceID() : 0,
 #if UNITY_EDITOR
-                EditorJsonUtility.ToJson(modifiedMaterial).GetHashCode()
+                (uint)EditorJsonUtility.ToJson(modifiedMaterial).GetHashCode()
 #else
                 0
 #endif

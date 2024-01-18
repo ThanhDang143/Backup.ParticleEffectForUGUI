@@ -5,6 +5,7 @@
     "com.coffee.simple-scene-navigator": "https://github.com/mob-sakai/Coffee.Internal.git?path=Packages/SceneNavigator",
     "com.coffee.sub-asset-editor": "https://github.com/mob-sakai/SubAssetEditor.git",
     "com.unity.ide.rider": "3.0.27",
+    "com.unity.ide.visualstudio": "2.0.22",
     "com.unity.test-framework": "1.1.33",
     "com.unity.modules.animation": "1.0.0",
     "com.unity.modules.physics": "1.0.0"
